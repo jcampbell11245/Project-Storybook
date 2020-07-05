@@ -1,18 +1,11 @@
----
-name: Bug report
-about: Create a report to help us improve
-title: ''
-labels: ''
-assignees: ''
+**Version**
 
----
-
-**Godot Version & Plugin Version**
-Godot: *x.x.x*
-Plugin: *x.x.x*
+Provide the version of Godot if building from source.
 
 **Describe the bug**
+
 A clear and concise description of what the bug is.
 
 **Screenshots**
-A screenshot of Godot Editor while you are encountering this bug, or a clear screenshot of Editor/External console.
+
+A screenshot of the bug occurring. If building from source, include a screenshot of the editor and/or console.
