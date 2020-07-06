@@ -10,3 +10,4 @@ tar --exclude=".*" -cvzf BuildZips/Linux64.tar.gz Linux64
 tar --exclude=".*" -cvzf BuildZips/Linux32.tar.gz Linux32
 
 cp MacOS/ProjectStorybook.zip BuildZips/MacOS.zip
+cp Windows32/ProjectStorybook.pck BuildZips/
