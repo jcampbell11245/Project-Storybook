@@ -91,6 +91,12 @@ delete={
  ]
 }
 
+[layer_names]
+
+2d_physics/layer_1="Player"
+2d_physics/layer_2="Terrain"
+2d_physics/layer_3="Enemies"
+
 [rendering]
 
 quality/driver/driver_name="GLES2"

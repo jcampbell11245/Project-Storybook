@@ -20,6 +20,7 @@ animations = [ {
 } ]
 
 [node name="Player2D" type="KinematicBody2D"]
+collision_mask = 6
 
 [node name="CollisionShape" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
