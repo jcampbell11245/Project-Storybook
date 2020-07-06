@@ -11,7 +11,6 @@ var velocity = Vector2.ZERO
 var direction = 1
 
 func _ready():
-	print(xmin == 0)
 	velocity = Vector2(speed, 0)
 
 func _physics_process(delta):
