@@ -31,3 +31,9 @@ func _process(delta):
 			else:
 				y = y + (64 - (64 - fmod(-y, 64.0)))
 		position = Vector2(x, y)
+		
+		#Change indicator color
+		if !Input.is_action_pressed("delete") && $AnimatedSprite.animation != "default":
+			$AnimatedSprite.play("default")
+		if Input.is_action_pressed("delete") && $AnimatedSprite.animation != "delete":
+			$AnimatedSprite.play("delete")

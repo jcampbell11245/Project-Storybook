@@ -37,7 +37,7 @@ func get_input():
 		$AnimationManager.play("idle", false)
 		$CollisionShape.shape.extents = Vector2(32, 64)
 		speed = 850
-		
+
 	#Dodging
 	if(Input.is_action_just_pressed("dodge_right")) && $DodgeTimer.time_left == 0:
 		$DodgeTimer.start(1.0)
