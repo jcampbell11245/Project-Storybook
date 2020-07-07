@@ -4,10 +4,6 @@
 [ext_resource path="res://src/ui/building/Selector.gd" type="Script" id=2]
 [ext_resource path="res://sprites/delete.png" type="Texture" id=3]
 
-
-
-
-
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
 "frames": [ ExtResource( 1 ) ],
@@ -22,6 +18,7 @@ animations = [ {
 } ]
 
 [node name="Selector" type="Node2D"]
+z_index = 4095
 script = ExtResource( 2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
