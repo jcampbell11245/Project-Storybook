@@ -42,5 +42,5 @@ func draw_selection(mousePos):
 			if not pos in selectors.keys():
 				var selector = Selector.instance()
 				add_child(selector)
-				selector.position = pos
+				selector.rect_global_position = pos
 				selectors[pos] = selector
