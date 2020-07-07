@@ -6,7 +6,7 @@ const Block = preload("res://src/ui/building/Block.tscn")
 func _ready():
 	parent = get_parent()
 
-func _process(delta):
+func _process(_delta):
 	#Change selector color
 	if !Input.is_action_pressed("delete") && $AnimatedSprite.animation != "default":
 		$AnimatedSprite.play("default")

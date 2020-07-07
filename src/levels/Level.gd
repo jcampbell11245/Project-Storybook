@@ -10,7 +10,7 @@ const Selector = preload("res://src/ui/building/Selector.tscn")
 func _ready():
 	pass
 
-func _process(delta):
+func _process(_delta):
 	#Stores mouse position
 	if(Input.is_action_just_pressed("place") || Input.is_action_just_pressed("delete")):
 		startPos = Utils.get_grid_pos(get_global_mouse_position())
