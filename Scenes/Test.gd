@@ -3,7 +3,7 @@ extends Node2D
 var mousePos
 var selectorCoords
 var selectors = []
-var blocks = []
+var blocks = {}
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

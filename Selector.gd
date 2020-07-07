@@ -1,18 +1,14 @@
 extends Node2D
 
-
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
+var root_node
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	root_node = get_node("/root/Test")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _physics_process(delta):
+func _process(delta):
 	#Change selector color
 	if !Input.is_action_pressed("delete") && $AnimatedSprite.animation != "default":
 		$AnimatedSprite.play("default")
@@ -21,15 +17,17 @@ func _physics_process(delta):
 	
 	#Create blocks
 	if Input.is_action_just_released("place"):
-		var block = load("res://Block.tscn").instance()
-		get_node("/root/Test").add_child(block)
-		block.position = position
+		if not position in root_node.blocks.keys():
+			var block = load("res://Block.tscn").instance()
+			root_node.add_child(block)
+			root_node.blocks[position] = block
+			block.position = position
 		free()
 		
 	#Delete blocks
 	elif Input.is_action_just_released("delete"):
-		for block in get_node("/root/Test").blocks:
-			if block.position.x == position.x && block.position.y == position.y:
-					get_node("/root/Test").blocks.erase(block)
-					block.free()
+		if position in root_node.blocks.keys():
+			var block = root_node.blocks[position]
+			root_node.blocks.erase(position)
+			block.free()
 		free()
