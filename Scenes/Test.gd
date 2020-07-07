@@ -45,28 +45,7 @@ func draw_selection(coords):
 
 #Gets the closest position in a 64x64 grid
 func get_grid_pos(coords):
-	var x = coords.x;
-	if(x >= 0):
-		if fmod(x, 64.0) < 32:
-			x = x - fmod(x, 64.0)
-		else:
-			x = x + (64 - fmod(x, 64.0))
-	else:
-		if (64 - fmod(-x, 64.0)) < 32:
-			x = x - (64 - fmod(-x, 64.0))
-		else:
-			x = x + (64 - (64 - fmod(-x, 64.0)))
-	
-	var y = coords.y;
-	if(y >= 0):
-		if fmod(y, 64.0) < 32:
-			y = y - fmod(y, 64.0)
-		else:
-			y = y + (64 - fmod(y, 64.0))
-	else:
-		if (64 - fmod(-y, 64.0)) < 32:
-			y = y - (64 - fmod(-y, 64.0))
-		else:
-			y = y + (64 - (64 - fmod(-y, 64.0)))
-			
-	return Vector2(x, y)
+	return Vector2(
+		floor(coords.x/64) * 64,
+		floor(coords.y/64) * 64
+	)
