@@ -13,15 +13,27 @@ _global_script_classes=[ {
 "class": "GitAPI",
 "language": "NativeScript",
 "path": "res://git_api.gdns"
+}, {
+"base": "Node2D",
+"class": "Level",
+"language": "GDScript",
+"path": "res://src/levels/Level.gd"
+}, {
+"base": "Node",
+"class": "Utils",
+"language": "GDScript",
+"path": "res://src/static/Utils.gd"
 } ]
 _global_script_class_icons={
-"GitAPI": ""
+"GitAPI": "",
+"Level": "",
+"Utils": ""
 }
 
 [application]
 
 config/name="Project Storybook"
-run/main_scene="res://Scenes/Test.tscn"
+run/main_scene="res://src/levels/Test.tscn"
 config/icon="res://icon.png"
 
 [autoload]

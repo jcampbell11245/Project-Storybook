@@ -1,0 +1,95 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://sprites/player/Idle.png" type="Texture" id=1]
+[ext_resource path="res://sprites/player/Duck.png" type="Texture" id=2]
+[ext_resource path="res://sprites/ink_move_icons/shield.png" type="Texture" id=3]
+[ext_resource path="res://sprites/ink_move_icons/shoot_ink.png" type="Texture" id=4]
+[ext_resource path="res://sprites/ink_move_icons/pen_stab.png" type="Texture" id=5]
+[ext_resource path="res://src/entities/Player2D.gd" type="Script" id=6]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 32, 64 )
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 1 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "duck",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [  ],
+"loop": true,
+"name": "whip",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ) ],
+"loop": true,
+"name": "pen stab",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "shoot ink",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 3 ) ],
+"loop": true,
+"name": "shield",
+"speed": 5.0
+} ]
+
+[node name="Player2D" type="KinematicBody2D"]
+collision_mask = 6
+script = ExtResource( 6 )
+
+[node name="CollisionShape" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="Camera" type="Camera2D" parent="."]
+current = true
+
+[node name="AnimationManager" type="AnimatedSprite" parent="."]
+frames = SubResource( 2 )
+animation = "idle"
+playing = true
+
+[node name="DodgeTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="Hud" type="MarginContainer" parent="."]
+margin_left = -466.546
+margin_top = -239.448
+margin_right = -466.546
+margin_bottom = -239.448
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Ink Menu" type="HBoxContainer" parent="Hud"]
+
+[node name="Ink Move Icon 1" type="AnimatedSprite" parent="Hud/Ink Menu"]
+frames = SubResource( 3 )
+animation = "shield"
+
+[node name="Ink Move Icon 2" type="AnimatedSprite" parent="Hud/Ink Menu"]
+frames = SubResource( 3 )
+animation = "shield"
+offset = Vector2( 34, 0 )
+
+[node name="Ink Move Icon 3" type="AnimatedSprite" parent="Hud/Ink Menu"]
+frames = SubResource( 3 )
+animation = "shield"
+offset = Vector2( 68, 0 )
+
+[node name="Ink Move Icon 4" type="AnimatedSprite" parent="Hud/Ink Menu"]
+frames = SubResource( 3 )
+animation = "shield"
+offset = Vector2( 102, 0 )
