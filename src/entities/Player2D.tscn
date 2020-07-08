@@ -1,13 +1,27 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://sprites/player/Idle.png" type="Texture" id=1]
 [ext_resource path="res://sprites/player/Duck.png" type="Texture" id=2]
 [ext_resource path="res://src/ui/InkQuickSwitch.tscn" type="PackedScene" id=3]
 [ext_resource path="res://sprites/ink_move_icons/selection_box.png" type="Texture" id=4]
+[ext_resource path="res://src/entities/Pause.gd" type="Script" id=5]
 [ext_resource path="res://src/entities/Player2D.gd" type="Script" id=6]
+[ext_resource path="res://fonts/8-BIT WONDER.TTF" type="DynamicFontData" id=7]
+[ext_resource path="res://src/entities/Resume.gd" type="Script" id=8]
+[ext_resource path="res://src/entities/Quit.gd" type="Script" id=9]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 32, 64 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 32
+font_data = ExtResource( 7 )
+
+[sub_resource type="DynamicFont" id=4]
+font_data = ExtResource( 7 )
+
+[sub_resource type="DynamicFont" id=5]
+font_data = ExtResource( 7 )
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
@@ -32,24 +46,92 @@ shape = SubResource( 1 )
 [node name="Camera" type="Camera2D" parent="."]
 current = true
 
-[node name="CanvasLayer" type="CanvasLayer" parent="Camera"]
+[node name="HudLayer" type="CanvasLayer" parent="Camera"]
 
-[node name="Hud" type="MarginContainer" parent="Camera/CanvasLayer"]
+[node name="Hud" type="MarginContainer" parent="Camera/HudLayer"]
 margin_right = 40.0
 margin_bottom = 40.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="InkQuickSwitch" parent="Camera/CanvasLayer/Hud" instance=ExtResource( 3 )]
+[node name="InkQuickSwitch" parent="Camera/HudLayer/Hud" instance=ExtResource( 3 )]
 margin_right = 104.0
 margin_bottom = 40.0
 
-[node name="SelectionBox" type="TextureRect" parent="Camera/CanvasLayer"]
+[node name="SelectionBox" type="TextureRect" parent="Camera/HudLayer"]
 margin_left = 36.0
 margin_right = 104.0
 margin_bottom = 40.0
 texture = ExtResource( 4 )
+
+[node name="PauseLayer" type="CanvasLayer" parent="Camera"]
+
+[node name="Pause" type="Control" parent="Camera/PauseLayer"]
+pause_mode = 2
+visible = false
+margin_left = 215.0
+margin_top = 75.0
+margin_right = 815.0
+margin_bottom = 525.0
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="Camera/PauseLayer/Pause"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.490196 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PauseVBox" type="VBoxContainer" parent="Camera/PauseLayer/Pause"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -80.0
+margin_top = -99.0
+margin_right = 80.0
+margin_bottom = 99.0
+custom_constants/separation = 90
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Camera/PauseLayer/Pause/PauseVBox"]
+margin_right = 160.0
+margin_bottom = 32.0
+custom_fonts/font = SubResource( 3 )
+text = "pause"
+align = 1
+uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ButtonVBox" type="VBoxContainer" parent="Camera/PauseLayer/Pause/PauseVBox"]
+margin_top = 122.0
+margin_right = 160.0
+margin_bottom = 196.0
+custom_constants/separation = 30
+
+[node name="Resume" type="Button" parent="Camera/PauseLayer/Pause/PauseVBox/ButtonVBox"]
+margin_right = 160.0
+margin_bottom = 22.0
+custom_fonts/font = SubResource( 4 )
+text = "resume"
+script = ExtResource( 8 )
+
+[node name="Quit" type="Button" parent="Camera/PauseLayer/Pause/PauseVBox/ButtonVBox"]
+margin_top = 52.0
+margin_right = 160.0
+margin_bottom = 74.0
+custom_fonts/font = SubResource( 5 )
+text = "quit"
+script = ExtResource( 9 )
 
 [node name="AnimationManager" type="AnimatedSprite" parent="."]
 frames = SubResource( 2 )

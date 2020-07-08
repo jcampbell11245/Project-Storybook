@@ -7,7 +7,7 @@ export (float, 0, 1.0) var friction = 0.1
 export (float, 0, 1.0) var acceleration = 0.25
 var velocity = Vector2.ZERO
 
-onready var ink_menu = $Camera/CanvasLayer/Hud/InkQuickSwitch
+onready var ink_menu = $Camera/HudLayer/Hud/InkQuickSwitch
 
 func _ready():
 	ink_menu.add_icon("pen_stab")
