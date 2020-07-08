@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://src/ui/InkQuickSwitch.gd" type="Script" id=1]
+[ext_resource path="res://sprites/ink_move_icons/pen_stab.png" type="Texture" id=2]
+
+[node name="InkQuickSwitch" type="HBoxContainer"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="InkMenuItem1" type="TextureRect" parent="."]
+margin_right = 32.0
+margin_bottom = 32.0
+texture = ExtResource( 2 )
+
+[node name="InkMenuItem2" type="TextureRect" parent="."]
+margin_left = 36.0
+margin_right = 68.0
+margin_bottom = 32.0
+texture = ExtResource( 2 )
+
+[node name="InkMenuItem3" type="TextureRect" parent="."]
+margin_left = 72.0
+margin_right = 104.0
+margin_bottom = 32.0
+texture = ExtResource( 2 )
