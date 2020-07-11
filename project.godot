@@ -42,6 +42,14 @@ UserData="*res://addons/github-integration/scripts/user_data.gd"
 IconLoaderGithub="*res://addons/github-integration/scripts/IconLoaderGithub.gd"
 RestHandler="*res://addons/github-integration/scripts/RestHandler.gd"
 
+[display]
+
+window/size/width=512
+window/size/height=288
+window/size/fullscreen=true
+window/stretch/mode="2d"
+window/stretch/aspect="keep"
+
 [editor_plugins]
 
 enabled=PoolStringArray( "github-integration" )

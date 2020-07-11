@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/delete.png-491244983735b9d32d04701ea9d65362.stex"
+path="res://.import/arthur.png-f906c28c3da940248290a7ec361264cd.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/delete.png"
-dest_files=[ "res://.import/delete.png-491244983735b9d32d04701ea9d65362.stex" ]
+source_file="res://sprites/player/arthur.png"
+dest_files=[ "res://.import/arthur.png-f906c28c3da940248290a7ec361264cd.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=false
+flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

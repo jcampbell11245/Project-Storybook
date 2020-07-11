@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/delete.png-491244983735b9d32d04701ea9d65362.stex"
+path="res://.import/Broomstick.png-55bff9b31c26c3c73c1cb709be90d765.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/delete.png"
-dest_files=[ "res://.import/delete.png-491244983735b9d32d04701ea9d65362.stex" ]
+source_file="res://sprites/ink_move_icons/Broomstick.png"
+dest_files=[ "res://.import/Broomstick.png-55bff9b31c26c3c73c1cb709be90d765.stex" ]
 
 [params]
 

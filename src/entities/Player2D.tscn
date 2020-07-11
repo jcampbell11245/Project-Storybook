@@ -13,17 +13,17 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 32, 64 )
 
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="DynamicFont" id=2]
 size = 32
+font_data = ExtResource( 7 )
+
+[sub_resource type="DynamicFont" id=3]
 font_data = ExtResource( 7 )
 
 [sub_resource type="DynamicFont" id=4]
 font_data = ExtResource( 7 )
 
-[sub_resource type="DynamicFont" id=5]
-font_data = ExtResource( 7 )
-
-[sub_resource type="SpriteFrames" id=2]
+[sub_resource type="SpriteFrames" id=5]
 animations = [ {
 "frames": [ ExtResource( 1 ) ],
 "loop": true,
@@ -70,10 +70,12 @@ texture = ExtResource( 4 )
 [node name="Pause" type="Control" parent="Camera/PauseLayer"]
 pause_mode = 2
 visible = false
-margin_left = 215.0
-margin_top = 75.0
-margin_right = 815.0
-margin_bottom = 525.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 50.0
+margin_top = 30.0
+margin_right = -50.0
+margin_bottom = -30.0
 script = ExtResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -104,7 +106,7 @@ __meta__ = {
 [node name="Label" type="Label" parent="Camera/PauseLayer/Pause/PauseVBox"]
 margin_right = 160.0
 margin_bottom = 32.0
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 2 )
 text = "pause"
 align = 1
 uppercase = true
@@ -121,7 +123,7 @@ custom_constants/separation = 30
 [node name="Resume" type="Button" parent="Camera/PauseLayer/Pause/PauseVBox/ButtonVBox"]
 margin_right = 160.0
 margin_bottom = 22.0
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 3 )
 text = "resume"
 script = ExtResource( 8 )
 
@@ -129,12 +131,12 @@ script = ExtResource( 8 )
 margin_top = 52.0
 margin_right = 160.0
 margin_bottom = 74.0
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 4 )
 text = "quit"
 script = ExtResource( 9 )
 
 [node name="AnimationManager" type="AnimatedSprite" parent="."]
-frames = SubResource( 2 )
+frames = SubResource( 5 )
 animation = "idle"
 playing = true
 

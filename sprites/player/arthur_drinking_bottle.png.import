@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/delete.png-491244983735b9d32d04701ea9d65362.stex"
+path="res://.import/arthur_drinking_bottle.png-bd2494ed6ed8f12f5f0c3a49c5b3d2ae.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/delete.png"
-dest_files=[ "res://.import/delete.png-491244983735b9d32d04701ea9d65362.stex" ]
+source_file="res://sprites/player/arthur_drinking_bottle.png"
+dest_files=[ "res://.import/arthur_drinking_bottle.png-bd2494ed6ed8f12f5f0c3a49c5b3d2ae.stex" ]
 
 [params]
 

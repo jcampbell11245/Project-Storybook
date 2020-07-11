@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/delete.png-491244983735b9d32d04701ea9d65362.stex"
+path="res://.import/arthur_climbing_horizontal.png-9482ca9e06d3d7739657c3eaf5ec67c1.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/delete.png"
-dest_files=[ "res://.import/delete.png-491244983735b9d32d04701ea9d65362.stex" ]
+source_file="res://sprites/player/arthur_climbing_horizontal.png"
+dest_files=[ "res://.import/arthur_climbing_horizontal.png-9482ca9e06d3d7739657c3eaf5ec67c1.stex" ]
 
 [params]
 
