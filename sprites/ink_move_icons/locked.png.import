@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/harpoon.png-56428547b8f05c7a526316e5960b5d6f.stex"
+path="res://.import/locked.png-e4abab91576eb7dfcb7526c5d86a17e6.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/ink_move_icons/harpoon.png"
-dest_files=[ "res://.import/harpoon.png-56428547b8f05c7a526316e5960b5d6f.stex" ]
+source_file="res://sprites/ink_move_icons/locked.png"
+dest_files=[ "res://.import/locked.png-e4abab91576eb7dfcb7526c5d86a17e6.stex" ]
 
 [params]
 

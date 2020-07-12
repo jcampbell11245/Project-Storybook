@@ -1,7 +1,8 @@
 extends Control
 
 func _input(event):
-	if event.is_action_pressed("pause"):
+	var ink_menu_open = get_parent().get_parent().get_node("InkMenuLayer/InkMenu").visible
+	if !ink_menu_open && event.is_action_pressed("pause"):
 		pause()
 
 func pause():

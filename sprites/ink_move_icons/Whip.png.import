@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Whip.png-ef8c9a75a84247d6e52f0de3e535be7f.stex"
+path="res://.import/whip.png-87a5af8850d3413a5318f5a101ed024a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/ink_move_icons/Whip.png"
-dest_files=[ "res://.import/Whip.png-ef8c9a75a84247d6e52f0de3e535be7f.stex" ]
+source_file="res://sprites/ink_move_icons/whip.png"
+dest_files=[ "res://.import/whip.png-87a5af8850d3413a5318f5a101ed024a.stex" ]
 
 [params]
 
@@ -30,5 +30,5 @@ process/HDR_as_SRGB=false
 process/invert_color=false
 stream=false
 size_limit=0
-detect_3d=true
+detect_3d=false
 svg/scale=1.0

@@ -5,15 +5,19 @@ export (int) var jump_speed = -1400
 export (int) var gravity = 3300
 export (float, 0, 1.0) var friction = 0.1
 export (float, 0, 1.0) var acceleration = 0.25
+
+var ink_move_pos = 0
+
 var velocity = Vector2.ZERO
 
-onready var ink_menu = $Camera/HudLayer/Hud/InkQuickSwitch
+onready var ink_quick_switch = $Camera/HudLayer/Hud/InkQuickSwitch
+onready var ink_menu = $Camera/InkMenuLayer/InkMenu
 
 func _ready():
-	ink_menu.add_icon("pen_stab")
-	ink_menu.add_icon("shoot_ink")
-	ink_menu.add_icon("whip")
-	ink_menu.add_icon("sword")
+	ink_quick_switch.add_icon("pen_stab", ink_move_pos)
+	ink_menu.unlock_item(0)
+	ink_quick_switch.add_icon("shoot_ink", ink_move_pos)
+	ink_menu.unlock_item(1)
 
 #func _process(delta):
 #	pass
@@ -61,6 +65,10 @@ func get_input():
 		
 	#Weapon switching
 	if(Input.is_action_just_released("next_weapon") || quick_switch && Input.is_action_just_pressed("move_right")):
-		ink_menu.shift_right()
+		ink_move_pos = ink_quick_switch.shift_right(ink_move_pos)
 	elif(Input.is_action_just_released("prev_weapon") || quick_switch && Input.is_action_just_pressed("move_left")):
-		ink_menu.shift_left()
+		ink_move_pos = ink_quick_switch.shift_left(ink_move_pos)
+
+#Updates the ink quick switch with the currently selected ink move
+func update_quick_switch():
+	ink_quick_switch.update_menu(ink_move_pos)
