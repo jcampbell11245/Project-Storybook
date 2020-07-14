@@ -12,19 +12,20 @@ func _input(event):
 		open_close_menu()
 	
 	#Move selector
-	var pos = player.ink_move_pos
-	if event.is_action_pressed("ui_right"):
-		selector.move_right_left(pos, 1, unlocked_items)
-		player.ink_move_pos = selector.get_pos()
-	elif event.is_action_pressed("ui_left"):
-		selector.move_right_left(pos, -1, unlocked_items)
-		player.ink_move_pos = selector.get_pos()
-	elif event.is_action_pressed("ui_up"):
-		selector.move_up_down(pos, 1, unlocked_items)
-		player.ink_move_pos = selector.get_pos()
-	elif event.is_action_pressed("ui_down"):
-		selector.move_up_down(pos, -1, unlocked_items)
-		player.ink_move_pos = selector.get_pos()
+	if visible:
+		var pos = player.ink_move_pos
+		if event.is_action_pressed("ui_right"):
+			selector.move_right_left(pos, 1, unlocked_items)
+			player.ink_move_pos = selector.get_pos()
+		elif event.is_action_pressed("ui_left"):
+			selector.move_right_left(pos, -1, unlocked_items)
+			player.ink_move_pos = selector.get_pos()
+		elif event.is_action_pressed("ui_up"):
+			selector.move_up_down(pos, 1, unlocked_items)
+			player.ink_move_pos = selector.get_pos()
+		elif event.is_action_pressed("ui_down"):
+			selector.move_up_down(pos, -1, unlocked_items)
+			player.ink_move_pos = selector.get_pos()
 
 func open_close_menu():
 		var new_pause_state = !get_tree().paused

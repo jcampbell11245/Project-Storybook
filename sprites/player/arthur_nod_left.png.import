@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/arthur_crawling.png-e187d560f0e409b53333aa7ace7f0eb2.stex"
+path="res://.import/arthur_nod_left.png-10928990655da0858e0eb73481f0ac85.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/player/arthur_crawling.png"
-dest_files=[ "res://.import/arthur_crawling.png-e187d560f0e409b53333aa7ace7f0eb2.stex" ]
+source_file="res://sprites/player/arthur_nod_left.png"
+dest_files=[ "res://.import/arthur_nod_left.png-10928990655da0858e0eb73481f0ac85.stex" ]
 
 [params]
 
@@ -30,5 +30,5 @@ process/HDR_as_SRGB=false
 process/invert_color=false
 stream=false
 size_limit=0
-detect_3d=true
+detect_3d=false
 svg/scale=1.0

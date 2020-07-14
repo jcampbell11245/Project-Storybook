@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/arthur_walking.png-660293c67eacde8cb2b6149a70aa2c69.stex"
+path="res://.import/arthur_idle_right.png-6a68a051b27915694c6673298be1d978.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/player/arthur_walking.png"
-dest_files=[ "res://.import/arthur_walking.png-660293c67eacde8cb2b6149a70aa2c69.stex" ]
+source_file="res://sprites/player/arthur_idle_right.png"
+dest_files=[ "res://.import/arthur_idle_right.png-6a68a051b27915694c6673298be1d978.stex" ]
 
 [params]
 
@@ -30,5 +30,5 @@ process/HDR_as_SRGB=false
 process/invert_color=false
 stream=false
 size_limit=0
-detect_3d=true
+detect_3d=false
 svg/scale=1.0
