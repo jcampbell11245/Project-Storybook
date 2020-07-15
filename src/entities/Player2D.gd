@@ -124,3 +124,5 @@ func get_input():
 #Updates the ink quick switch with the currently selected ink move
 func update_quick_switch():
 	ink_quick_switch.update_menu(ink_move_pos)
+
+#Uses the selected ink move

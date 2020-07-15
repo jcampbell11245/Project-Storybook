@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/arthur_pen_attack.png-ce48bcb39176066ed89e37b39239307c.stex"
+path="res://.import/arthur_pen_attack_left.png-9c11b69a1f6275fd506c8c0141d8f28a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/player/arthur_pen_attack.png"
-dest_files=[ "res://.import/arthur_pen_attack.png-ce48bcb39176066ed89e37b39239307c.stex" ]
+source_file="res://sprites/player/arthur_pen_attack_left.png"
+dest_files=[ "res://.import/arthur_pen_attack_left.png-9c11b69a1f6275fd506c8c0141d8f28a.stex" ]
 
 [params]
 
@@ -30,5 +30,5 @@ process/HDR_as_SRGB=false
 process/invert_color=false
 stream=false
 size_limit=0
-detect_3d=true
+detect_3d=false
 svg/scale=1.0
