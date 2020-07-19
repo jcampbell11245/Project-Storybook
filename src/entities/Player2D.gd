@@ -8,6 +8,8 @@ export (float, 0, 1.0) var acceleration = 0.25
 
 var ink_move_pos = 0 
 
+var attacking = false
+
 var direction = "right"
 
 var velocity = Vector2.ZERO
@@ -18,6 +20,7 @@ onready var ink_quick_switch = $Camera/HudLayer/Hud/InkQuickSwitch
 onready var ink_menu = $Camera/InkMenuLayer/InkMenu
 onready var animator = $AnimationManager
 onready var idle_timer = $IdleAnimTimer
+onready var hurtbox = $Hurtbox/CollisionShape
 
 func _ready():
 	ink_quick_switch.add_icon("pen_stab", ink_move_pos)
@@ -32,10 +35,18 @@ func _process(delta):
 	if idle_timer.time_left < 1 && (animator.animation == "idle_right" || animator.animation == "idle_left"):
 		animator.animation = "nod_" + direction
 		idle_timer.start(rng.randi_range(10, 20))
-	
 	for action in ["jump", "move_left", "move_right", "duck", "attack", "dodge_left", "dodge_right", "pause", "ink_menu", "place", "delete"]:
 		if Input.is_action_just_pressed(action):
 			idle_timer.start(rng.randi_range(10, 20))
+	
+	#Finishes pen attack
+	if (animator.animation == "pen_attack_right" || animator.animation == "pen_attack_left") && animator.frame == 3:
+		hurtbox.disabled = true
+		if is_on_floor():
+			animator.animation = "idle_" + direction
+		else:
+			animator.animation = "fall_" + direction
+		attacking = false
 	
 func _physics_process(delta):
 	get_input()
@@ -70,7 +81,7 @@ func get_input():
 	var dir = 0
 	if Input.is_action_pressed("move_right") && !quick_switch:
 		dir += 1
-		if is_on_floor() && velocity.y >= 0 && !Input.is_action_pressed("duck"):
+		if is_on_floor() && velocity.y >= 0 && !Input.is_action_pressed("duck") && !attacking:
 			animator.animation = "walk_right"
 		elif is_on_floor() && velocity.y >= 0 && Input.is_action_pressed("duck"):
 			animator.animation = "crawl_right"
@@ -79,7 +90,7 @@ func get_input():
 		
 	if Input.is_action_pressed("move_left") && !quick_switch:
 		dir -= 1
-		if is_on_floor() && velocity.y >= 0 && !Input.is_action_pressed("duck"):
+		if is_on_floor() && velocity.y >= 0 && !Input.is_action_pressed("duck") && !attacking:
 			animator.animation = "walk_left"
 		elif is_on_floor() && velocity.y >= 0 && Input.is_action_pressed("duck"):
 			animator.animation = "crawl_left"
@@ -104,7 +115,11 @@ func get_input():
 		$AnimationManager.play("idle_" + direction, false)
 		$CollisionShape.shape.extents = Vector2(13, 27)
 		speed = 850
-
+		
+	#Using ink move
+	if Input.is_action_just_pressed("attack"):
+		use_ink_move()
+	
 	#Dodging
 	if(Input.is_action_just_pressed("dodge_right")) && $DodgeTimer.time_left == 0 && is_on_floor():
 		animator.animation = "dodge_right"
@@ -126,3 +141,12 @@ func update_quick_switch():
 	ink_quick_switch.update_menu(ink_move_pos)
 
 #Uses the selected ink move
+func use_ink_move():
+	if ink_move_pos == 0:
+		animator.animation = "pen_attack_" + direction
+		hurtbox.disabled = false
+		if direction == "right":
+			hurtbox.position = Vector2(7.5, 0.5)
+		else:
+			hurtbox.position = Vector2(-7.5, 0.5)
+		attacking = true
